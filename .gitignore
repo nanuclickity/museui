@@ -1,0 +1,6 @@
+node_modules/
+vendor/
+js/
+css/style.css
+css/themes/
+index.html

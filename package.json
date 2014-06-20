@@ -1,0 +1,14 @@
+{
+  "name": "muse",
+  "version": "0.0.1",
+  "description": "chrome packaged app media player",
+  "main": "index.js",
+  "scripts": {
+    "test": "cake test"
+  },
+  "author": "Tushar Kant",
+  "license": "MIT",
+  "dependencies": {
+    "nib": "^1.0.2"
+  }
+}
