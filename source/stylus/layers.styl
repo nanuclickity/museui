@@ -1,0 +1,129 @@
+.layer
+	display block
+	absolute top right bottom left
+	z-index 1
+
+body
+	@extends .layer
+	overflow hidden
+
+.app-content
+	@extends .layer
+	z-index 100
+
+.loader-circle
+	relative left 50%
+	margin 24px -8px 24px 0
+	border-radius 50%
+	border 12px transparent solid
+
+	height 16px
+	width 16px
+	background-color rgba(#fff, 0.65)
+
+	box-sizing border-box
+	box-shadow inset 0px 2px 5px 0 rgba(#000, 0.15)
+	animation loader-anim 1s ease-in-out infinite
+
+.loader, .loader:after, loader:before
+	@extends .loader-circle
+
+.loader
+	animation-delay 0.3s
+	
+	&:after, &:before	
+		content ''
+	&:after
+		left -50px
+	&:before
+		right -50px
+		animation-delay 0.6s
+
+@keyframes loader-anim
+	0%, 45%, 90%, 100%
+		opacity 1
+		
+	15%, 75%
+		opacity round(sin(30), 2)
+		
+	30%, 60%
+		opacity round(sin(60), 2)
+
+
+.spinner {
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  width: 128px;
+  height: 128px;
+  border-radius: 100px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
+  transform-origin: 50% 60%;
+  transform: perspective(128px) rotateX(66deg);
+  animation: spinner-wiggle 1.2s infinite;
+}
+
+@keyframes spinner-wiggle {
+  30% {
+    transform: perspective(128px) rotateX(66deg);
+  }
+
+  40% {
+    transform: perspective(128px) rotateX(65deg);
+  }
+
+  50% {
+    transform: perspective(128px) rotateX(68deg);
+  }
+
+  60% {
+    transform: perspective(128px) rotateX(64deg);
+  }
+}
+.spinner:before,
+.spinner:after {
+  content: "";
+  position: absolute;
+  margin: -4px;
+  box-sizing: inherit;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background-clip: padding-box;
+  -webkit-mask: linear-gradient(rgba(0,0,0,0.5), #000 80%)
+  opacity: .05;
+  border: inherit;
+  border-color: transparent;
+  animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
+}
+
+.spinner:before {
+  border-top-color: rgba(theme_base, 0.65);
+}
+
+.spinner:after {
+  border-top-color: rgba(theme_base, 0.65);
+  animation-delay: 0.3s;
+}
+
+@keyframes spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-fade {
+  20% {
+    opacity: .1;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: .1;
+  }
+}

@@ -1,0 +1,36 @@
+.app-header
+	@extends .layer
+	bottom initial
+	z-index 1000
+	height 60px
+	-webkit-app-region drag
+	cursor move
+
+	.header-inner
+
+		.logo
+			-webkit-app-region no-drag
+			absolute top 15px left 15px
+			width 64px
+			font-size 32px
+			height 64px
+			display block
+			padding 8px 10px
+			color rgba(#fff, 0.75)
+			border 1px rgba(#fff, 0.65) solid
+			border-radius 2px
+			cursor pointer
+			background-color rgba(#fff, 0.2)
+			transition all .15s ease-in-out
+			&:hover, &:active
+				background-color rgba(#fff, 1)
+				color color_blue
+				box-shadow 0px 2px 8px 0 rgba(#000, 0.15) 
+
+	.header-item
+		padding 15px 0
+		&:first-child
+			padding-left 15px
+		&:last-child
+			padding-right 15px
+		
