@@ -1,5 +1,5 @@
 {
-  "name": "muse",
+  "name": "Muse",
   "description": "chrome packaged app media player",
   "version": "0.1",
   "app": {
@@ -7,6 +7,12 @@
       "scripts": ["/js/background.js"]
     }
   },
+  "icons": {
+    "256": "img/icons/logo256.png",
+    "128": "img/icons/logo128.png",
+    "64": "img/icons/logo64.png",
+    "32": "img/icons/logo32.png"
+   },
   "permissions": [
       "<all_urls>",
       "notifications",

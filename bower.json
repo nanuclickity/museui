@@ -1,5 +1,5 @@
 {
-  "name": "muse",
+  "name": "Muse",
   "version": "0.0.1",
   "authors": [
     "Tushar Kant <nanu.clickity@gmail.com>"
@@ -29,6 +29,8 @@
     "animate.css": "~3.1.1",
     "bootstrap": "~3.1.1",
     "require-css": "~0.1.4",
-    "requirejs-plugins": "~1.0.2"
+    "requirejs-plugins": "~1.0.2",
+    "css-loaders": "https://github.com/lukehaas/css-loaders",
+    "fontawesome": "~4.1.0"
   }
 }
