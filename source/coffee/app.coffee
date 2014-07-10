@@ -3,25 +3,28 @@ define [
 	'routers/app_router'
 	'regions/header'
 	'regions/content'
+	'utils/background'
 	'views/loading'
-], (Config, Router, Region_Header, Region_Content, View)->	
+	'modules/scanner'
+], (Config, Router, Region_Header, Region_Content, Background, View, Scanner)->	
 	
 	App = new Marionette.Application()
 	
 	App.Config = Config
-
-	App.addRegions
-		Header : Region_Header
-		Content: Region_Content
-
-	App.Content.show new View()
+	App.Router = Router
+	App.Background = Background
+	
+	App.addInitializer -> if Config.get('scanOnStart') then do Scanner.refresh
 
 	App.addInitializer ->
-		App.Router = Router
-
+		App.addRegions
+			Header : Region_Header
+			Content: Region_Content
+		
+	App.addInitializer -> App.Content.show new View()
 
 	App.on 'start', ->
-		if !Backbone.History.started
-			Backbone.history.start pushState: true, hashChange: false
+		unless Backbone.History.started
+			Backbone.history.start pushState: false, hashChange: true
 
 	return App

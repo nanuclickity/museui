@@ -17,9 +17,12 @@ define [
 		open: (view)->
 			view.$el.hide()
 			@$el.html view.el
-			view.$el.show().addClass  @animation['onOpen']
-			console.log 'Region:Content: Open.'
+			view.$el.show().addClass @animation['onOpen']
 
 	Region = new ContentRegion el: '.app-content'
+	
+	Region.on 'change:view', (url)->
+		requirejs [url], (view)-> Region.show new view()
+	
 	
 	return Region

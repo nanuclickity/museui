@@ -3,10 +3,12 @@ define [
 	'controllers/app_controller'
 ], (Marionette, AppController)->
 	
-	class AppRouter extends Marionette.AppRouter
+	AppRouter = Marionette.AppRouter.extend
 		controller: AppController
 		appRoutes:
-			'': 'renderLoading'
+			'/'    : 'renderLoading'
+			'home': 'renderHome'
+		
 		initialize: ->
 			console.log 'Starting App Router'
 

@@ -3,7 +3,7 @@ define [
 	'views/header/default'
 ], (Marionette, HeaderView)->
 
-	class HeaderRegion extends Marionette.Region
+	HeaderRegion = Marionette.Region.extend
 		open: (view)->
 			view.$el.hide()
 			this.$el.html view.el

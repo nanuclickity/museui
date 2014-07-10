@@ -3,7 +3,7 @@ define [
 	'templates'
 ], (Marionette, jade)->
 
-	class HeaderView extends Marionette.ItemView
+	HeaderView = Marionette.ItemView.extend
 		template: jade.templates['header']
 		className: 'header-inner'
 

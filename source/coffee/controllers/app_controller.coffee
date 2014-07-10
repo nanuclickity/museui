@@ -2,14 +2,11 @@ define [
 	'marionette'
 	'regions/content'
 ], (Marionette, Content)->
-	
-	
-	class AppController extends Marionette.Controller
-		renderLoading: -> 
-			console.log 'Controller...'
-			requirejs ['views/loading'], (view)-> 
-				console.log 'Showing'
-				Content.show new view()
+
+	AppController = Marionette.Controller.extend
+
+		renderLoading: -> Content.trigger 'change:view', 'views/loading'
+		renderHome: -> Content.trigger 'change:view', 'views/home'
+
 	Controller = new AppController()
-	console.log 'Controller..'
 	return Controller

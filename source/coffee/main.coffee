@@ -1,10 +1,10 @@
 requirejs.config
-	baseUrl: "/js/"
+	baseUrl: "./js/"
 	paths:
-		underscore  :	"/vendor/underscore/underscore"
-		jquery      :	"/vendor/jquery/dist/jquery.min"
-		backbone    :	"/vendor/backbone/backbone"
-		marionette  :	"/vendor/backbone.marionette/lib/backbone.marionette.min"
+		underscore  :	"../vendor/underscore/underscore"
+		jquery      :	"../vendor/jquery/dist/jquery.min"
+		backbone    :	"../vendor/backbone/backbone"
+		marionette  :	"../vendor/backbone.marionette/lib/backbone.marionette"
 		templates   :	"./templates"
 		app         :	"./app"
 		vent        :	"./utils/vent"
