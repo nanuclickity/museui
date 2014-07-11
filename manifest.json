@@ -19,7 +19,6 @@
       { 
         "mediaGalleries": ["read", "allAutoDetected"]
       },
-      "storage",
-      "background"
+      "storage"
   ]
 }
