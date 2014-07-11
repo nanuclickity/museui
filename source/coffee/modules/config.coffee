@@ -24,8 +24,7 @@ define [
 		getAll: -> _Buffer
 		
 		set: (key, value)-> 
-			if !key or !value
-				throw new Error 'Invalid arguments'
+			if !key then throw new Error 'Invalid arguments'
 			else _Buffer[key] = value
 
 		clear: -> 
