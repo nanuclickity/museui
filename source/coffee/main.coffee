@@ -6,8 +6,11 @@ requirejs.config
 		backbone    :	"../vendor/backbone/backbone"
 		marionette  :	"../vendor/backbone.marionette/lib/backbone.marionette"
 		templates   :	"./templates"
-		app         :	"./app"
-		vent        :	"./utils/vent"
+		
+		app    : "./app"
+		vent   : "./utils/vent"
+		config : "./modules/config"
+		library: "./utils/library"
 
 	shim:
 		jquery :

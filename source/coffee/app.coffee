@@ -14,7 +14,7 @@ define [
 	App.Router = Router
 	App.Background = Background
 	
-	App.addInitializer -> if Config.get('scanOnStart') then do Scanner.refresh
+	App.addInitializer -> 
 
 	App.addInitializer ->
 		App.addRegions
